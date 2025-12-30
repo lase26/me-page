@@ -18,7 +18,7 @@
     --main-color: #064e3b;
     --white-color: #fdfdfd;
     --shadow-color: rgba(0, 0, 0, .2);
-    --home-bg: url("images/lightmode.jpg");
+    --home-bg: url("images/lightmode.jpg?raw=true");
      --glow-color: transparent;
 }
 
