@@ -18,6 +18,8 @@
     --main-color: #064e3b;
     --white-color: #fdfdfd;
     --shadow-color: rgba(0, 0, 0, .2);
+    --home-bg: url("images/lightmode.jpg");
+     --glow-color: transparent;
 }
 
 
@@ -25,6 +27,8 @@
     --bg-color: #0a120d;
     --text-color: #ecfdf5;
     --shadow-color: rgba(0, 0, 0, .7);
+    --home-bg: url("images/homebg.jpeg");
+    --glow-color: #2dd4bf;
 }
 
 html{
@@ -49,6 +53,13 @@ body{
     align-items: center;
     z-index: 100;
     transition: .5s;
+}
+
+.dark-mode .header .logo{
+    text-shadow: 0 0 8px var(--glow-color),
+    0 0 18px #2dd4bf;
+    color: #ecfdf5;
+    transition: 2s;
 }
 
 .header.sticky {
@@ -91,7 +102,12 @@ body{
         transform 0.3s ease,
         color 0.3s ease;
 }
-
+.dark-mode .navbar a{
+    box-shadow:
+        0 0 8px var(--glow-color),
+        0 0 18px #2dd4bf;
+        transition: 3s;
+}
 
 .navbar a:hover {
     background: rgba(255, 255, 255, 0.22);
@@ -161,7 +177,8 @@ section{
     display: flex;
     align-items: center;
 
-    background-image: url("images/background_image2.avif");
+    background-image: var(--home-bg);
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -216,12 +233,26 @@ section{
     font-size: 2rem;
     color: var(--main-color);
     margin: 2.5rem  1.5rem 3rem 0;
-    transition: .5s ease-in-out;
+    transition: 
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+.dark-mode .home-content .social-media a {
+    box-shadow:
+        0 0 8px var(--glow-color),
+        0 0 18px #2dd4bf;
 }
 
 .home-content .social-media a:hover{
     background: var(--main-color);
     color: var(--white-color);
+    transform: translateY(-3px);
+    box-shadow:
+        0 0 12px var(--glow-color),
+        0 0 30px #2dd4bf;
+
 }
 
 .btn {
@@ -243,6 +274,14 @@ section{
     color: var(--main-color);
     border-color: var(--main-color);
 }
+.dark-mode .btn {
+    box-shadow: 0 0 12px var(--glow-color);
+}
+
+.dark-mode .social-icons a i {
+    filter: drop-shadow(0 0 10px var(--glow-color));
+}
+
 
 /* .home .profession-container{
     position: absolute;
@@ -367,6 +406,13 @@ span{
 
 .about-img img{
     width: 40vw;
+    background: #2dd4bf;
+    color: #022c22;
+    box-shadow:
+    0 0 10px #2dd4bf,
+    0 0 20px rgba(45, 212, 191, 0.8),
+    0 0 40px rgba(45, 212, 191, 0.6);
+
 }
 
 .heading {
@@ -381,7 +427,6 @@ span{
 
 .about-content h3{
     font-size: 2rem;
-
 }
 
 .about-content p{
@@ -427,6 +472,12 @@ span{
 .services-container .services-box:hover{
     box-shadow: 0 .1rem 2rem var(--shadow-color);
     transform: scale(1.02);
+    background: #34d399;
+    color: #022c22;
+    box-shadow:
+    0 0 10px #34d399,
+    0 0 20px rgba(52, 211, 153, 0.8),
+    0 0 40px rgba(52, 211, 153, 0.6);
 }
 
 .services-box h3{
